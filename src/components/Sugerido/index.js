@@ -6,24 +6,26 @@ export default function Sugerido({ config }) {
   const videos = config.playlists.Musica;
   const { setVideoPlayer } = useContext(VideoPlayerContext);
   const goToTop = () => {
-    window.scrollTo({
+    window.scrollTo(
+      {
         top: 0,
-        behavior: 'smooth',
-    },2);
-};
+        behavior: "smooth",
+      },
+      2
+    );
+  };
   return (
     <SugeridoContain className="Sugerido">
       {videos.map((video) => {
         return (
-          <div className="Contain__Sugeridos" key={video.thumb}>
-            <div className="Contain__Image">
-              <a
-                onClick={() => {
-                  setVideoPlayer(video),
-                  goToTop(),
-                  console.log("aqui");
-                }}
-              >
+          <a
+            key={video.thumb}
+            onClick={() => {
+              setVideoPlayer(video);
+            }}
+          >
+            <div className="Contain__Sugeridos">
+              <div className="Contain__Image">
                 <Image
                   width={767}
                   height={0}
@@ -31,30 +33,34 @@ export default function Sugerido({ config }) {
                   src={video.thumb}
                   alt="Thumbnail do vídeo"
                 />
-              </a>
-            </div>
-            <section className="Contain__Info">
-              <div>
-                <Image
-                  width={25}
-                  height={25}
-                  className="Info__Image"
-                  src={video.logoCanal}
-                  alt="Logo do canal"
-                />
               </div>
-              <div className="Contain__Dados">
-                <h1 className="Titulo__Video-sugerido">{video.title}</h1>
-                <div className="Info__Canal-sugerido">
-                  <span className="Canal__Nome-sugerido">
-                    {video.nomeCanal}
-                  </span>
-                  <span>{video.visualizacoes} visualizações</span>
-                  <span>há {video.date_time}</span>
+              <section className="Contain__Info">
+                <div>
+                  <Image
+                    width={25}
+                    height={25}
+                    className="Info__Image"
+                    src={video.logoCanal}
+                    alt="Logo do canal"
+                  />
                 </div>
-              </div>
-            </section>
-          </div>
+                <div className="Contain__Dados">
+                  <h1 className="Titulo__Video-sugerido">{video.title}</h1>
+                  <div className="Info__Canal-sugerido">
+                    <div className="Dados__Canal">
+                      <span className="Canal__Nome-sugerido">
+                        {video.nomeCanal}
+                      </span>
+                      <div>
+                        <span>{video.visualizacoes} visualizações</span>
+                        <span>há {video.date_time}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </a>
         );
       })}
     </SugeridoContain>

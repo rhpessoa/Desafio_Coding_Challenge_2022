@@ -1,11 +1,11 @@
 import styled from "styled-components";
-
 export const SugeridoContain = styled.div`
+  background-color: #0f0f0f;
   overflow: auto;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   .Image {
-    width: 100vw;
+    width: 100%;
     height: 25vh;
   }
   .Info__Image {
@@ -33,8 +33,26 @@ export const SugeridoContain = styled.div`
       margin-top: 0.2em;
     }
     span {
-      font-size: 10px;
+      font-size: 12px;
       margin-right: 0.8em;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    overflow: unset;
+    .Contain__Sugeridos {
+      display: flex;
+      flex-direction: row;
+      margin-left: 1.5em;
+    }
+    .Image {
+      width: 168px;
+      height: 94px;
+      border-radius: 10px;
+    }
+    .Info__Image {
+      display: none;
+    }
+    .Dados__Canal {
     }
   }
 `;
