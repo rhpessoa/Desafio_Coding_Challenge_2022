@@ -1,8 +1,25 @@
 import Image from "next/image";
+import {
+  info,
+  title,
+  url,
+  logoCanal,
+  nomeCanal,
+  visualizacoes,
+  date_time,
+  inscritos,
+} from "../../../utils/config";
 import { VideoContain } from "./styles";
 import { VideoPlayerContext } from "../../context/VideoPlayer";
-import { useContext } from "react";
-export default function Video({ config }) {
+import { useContext, useState } from "react";
+export default function Video() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handlerIsVisible = () => {
+    if (isVisible) {
+      setIsVisible(false);
+    } else setIsVisible(true);
+  };
   const { videoPlayer } = useContext(VideoPlayerContext);
   return (
     <>
@@ -23,13 +40,20 @@ export default function Video({ config }) {
               <h2 className="Video__Titulo">{videoPlayer.title}</h2>
             </div>
             <div className="Video__Alcance">
-              <div className="Alcance__Dados">
-                <span>{videoPlayer.visualizacoes} de visualizações</span>
-                <span>há {videoPlayer.date_time}</span>
-                <p className="Sobre__video">
-                {videoPlayer.info}
-                </p>
-              </div>
+              <a onClick={() => handlerIsVisible()}>
+                <div className="Alcance__Dados">
+                  <span>{videoPlayer.visualizacoes}M de visualizações</span>
+                  <span>há {videoPlayer.date_time}</span>
+                  {isVisible && (
+                    <p className="Sobre__video">{videoPlayer.info}</p>
+                  )}
+                  {isVisible ? (
+                    <p className="Video_show">Mostrar menos</p>
+                  ) : (
+                    <p className="Video_show">Mostrar mais</p>
+                  )}
+                </div>
+              </a>
               <div className="Canal__Status">
                 <section>
                   <Image
@@ -41,7 +65,9 @@ export default function Video({ config }) {
                   />
                   <div className="Canal__dados">
                     <p className="Canal__Nome">{videoPlayer.nomeCanal}</p>
-                    <p className="Canal__Inscrito">{videoPlayer.inscritos} inscritos</p>
+                    <p className="Canal__Inscrito">
+                      {videoPlayer.inscritos}M inscritos
+                    </p>
                   </div>
                 </section>
                 <a className="Video__Botao">Inscreva-se</a>
@@ -55,35 +81,41 @@ export default function Video({ config }) {
             <iframe
               className="Iframe__Video"
               frameBorder="0"
-              src={config.url}
+              src={url}
               title="YouTube video player"
               allowFullScreen
             />
           </section>
           <section className="Info__Video">
             <div>
-              <h2 className="Video__Titulo">{config.title}</h2>
+              <h2 className="Video__Titulo">{title}</h2>
             </div>
+
             <div className="Video__Alcance">
-              <div className="Alcance__Dados">
-                <span>{config.visualizacoes}</span>
-                <span>{config.date_time}</span>
-                <p className="Sobre__video">
-                {config.info}
-                </p>
-              </div>
+              <a onClick={() => handlerIsVisible()}>
+                <div className="Alcance__Dados">
+                  <span>{visualizacoes}</span>
+                  <span>{date_time}</span>
+                  {isVisible && <p className="Sobre__video">{info}</p>}
+                  {isVisible ? (
+                    <p className="Video_show">Mostrar menos</p>
+                  ) : (
+                    <p className="Video_show">Mostrar mais</p>
+                  )}
+                </div>
+              </a>
               <div className="Canal__Status">
                 <section>
                   <Image
                     width={40}
                     height={40}
                     className="Info__Image"
-                    src={config.logoCanal}
+                    src={logoCanal}
                     alt="Logo do canal"
                   />
                   <div className="Canal__dados">
-                    <p className="Canal__Nome">{config.nomeCanal}</p>
-                    <p className="Canal__Inscrito">{config.inscritos}</p>
+                    <p className="Canal__Nome">{nomeCanal}</p>
+                    <p className="Canal__Inscrito">{inscritos}</p>
                   </div>
                 </section>
                 <a className="Video__Botao">Inscreva-se</a>

@@ -87,6 +87,12 @@ export const VideoContain = styled.div`
         color: white;
         font-weight: bold;
       }
+      .Video_show{
+        margin-top: 0.5em;
+        font-size: 14px;
+        color: white;
+        font-weight: bold;
+      }
       .Alcance__Dados {
         margin-top: 0.5em;
         padding: 1em;
@@ -101,6 +107,7 @@ export const VideoContain = styled.div`
         font-family: "Roboto", "Arial", sans-serif;
         font-weight: 400;
         line-height: 1.4em;
+        white-space: pre-wrap;
       }
     }
     .Canal__Status {

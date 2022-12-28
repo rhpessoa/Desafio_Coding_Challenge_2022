@@ -2,7 +2,6 @@ import Header from "../src/components/Header";
 import Video from "../src/components/Video";
 import Sugerido from "../src/components/Sugerido";
 import styled from "styled-components";
-import config from "../config.json";
 const ContainerHome = styled.div`
   height: 100vh;
   background-color: #0f0f0f;
@@ -41,8 +40,8 @@ export default function Home() {
   return (
     <ContainerHome>
       <Header />
-      <Video config={config} />
-      <Sugerido config={config} />
+      <Video />
+      <Sugerido />
     </ContainerHome>
   );
 }
