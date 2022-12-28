@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const VideoContain = styled.div`
- background-color: #0f0f0f;
+  background-color: #0f0f0f;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   .Iframe__Video {
@@ -64,13 +64,11 @@ export const VideoContain = styled.div`
     }
   }
   @media screen and (min-width: 768px) {
-  
     .Video__Box {
       padding: 0 1.5em;
-      margin-top:4.5em;
+      margin-top: 4.5em;
     }
     .Info__Video {
-    
       padding: 1.5em;
       .Video__Alcance {
         display: flex;
@@ -135,6 +133,23 @@ export const VideoContain = styled.div`
         font-size: 13px;
         cursor: pointer;
         transition: 0.5ms;
+      }
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .Video__Box {
+      padding: 0 3em;
+      margin-top: 1.5em;
+    }
+    .Iframe__Video {
+      height: 60vh;
+    }
+    .Info__Video {
+      padding: 1.5em 3em 1.5em 3em;
+      .Video__Alcance {
+        section {
+          padding-top: 0.5em;
+        }
       }
     }
   }

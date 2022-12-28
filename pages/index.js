@@ -14,7 +14,7 @@ const ContainerHome = styled.div`
     "Header"
     "Video"
     "Sugerido";
-  .Header{
+  .Header {
     grid-area: Header;
   }
   .Video {
@@ -23,11 +23,24 @@ const ContainerHome = styled.div`
   .Sugerido {
     grid-area: Sugerido;
   }
+  @media screen and (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 3fr minmax(500px, 1fr);
+    grid-template-rows: 56px 1fr;
+    grid-template-areas:
+      "Header" "header"
+      "Video" "sugerido"
+      "video" "sugerido";
+    .Sugerido {
+      grid-row-start: 2;
+      grid-column-start: 2;
+    }
+  }
 `;
 export default function Home() {
   return (
     <ContainerHome>
-      <Header/>
+      <Header />
       <Video config={config} />
       <Sugerido config={config} />
     </ContainerHome>

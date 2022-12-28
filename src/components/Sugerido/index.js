@@ -5,20 +5,12 @@ import { VideoPlayerContext } from "../../context/VideoPlayer";
 export default function Sugerido({ config }) {
   const videos = config.playlists.Musica;
   const { setVideoPlayer } = useContext(VideoPlayerContext);
-  const goToTop = () => {
-    window.scrollTo(
-      {
-        top: 0,
-        behavior: "smooth",
-      },
-      2
-    );
-  };
   return (
     <SugeridoContain className="Sugerido">
       {videos.map((video) => {
         return (
           <a
+            className="Button"
             key={video.thumb}
             onClick={() => {
               setVideoPlayer(video);
@@ -52,7 +44,7 @@ export default function Sugerido({ config }) {
                         {video.nomeCanal}
                       </span>
                       <div>
-                        <span>{video.visualizacoes} visualizações</span>
+                        <span>{video.visualizacoes} de visualizações</span>
                         <span>há {video.date_time}</span>
                       </div>
                     </div>

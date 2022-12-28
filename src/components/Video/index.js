@@ -41,7 +41,7 @@ export default function Video({ config }) {
                   />
                   <div className="Canal__dados">
                     <p className="Canal__Nome">{videoPlayer.nomeCanal}</p>
-                    <p className="Canal__Inscrito">{videoPlayer.inscritos}</p>
+                    <p className="Canal__Inscrito">{videoPlayer.inscritos} inscritos</p>
                   </div>
                 </section>
                 <a className="Video__Botao">Inscreva-se</a>

@@ -8,6 +8,9 @@ export const SugeridoContain = styled.div`
     width: 100%;
     height: 25vh;
   }
+  .Button{
+    cursor: pointer;
+  }
   .Info__Image {
     border-radius: 50%;
   }
@@ -53,6 +56,14 @@ export const SugeridoContain = styled.div`
       display: none;
     }
     .Dados__Canal {
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    overflow: scroll;
+    padding-top: 1.5em;
+    .Contain__Sugeridos {
+      margin-left: 0;
+      margin-bottom: 0.3em;
     }
   }
 `;
