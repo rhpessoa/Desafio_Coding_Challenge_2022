@@ -18,7 +18,7 @@
 
 ![image](https://user-images.githubusercontent.com/42783697/209965121-e77fc525-c75b-4087-873b-0572c6591830.png)
 
- <h2> Desktop Viewport Size [1024x614614] </h2>
+ <h2> Desktop Viewport Size [1024x614] </h2>
 
 ![image](https://user-images.githubusercontent.com/42783697/209965184-24ce1307-d189-4c68-bf86-09037e660910.png)
 
