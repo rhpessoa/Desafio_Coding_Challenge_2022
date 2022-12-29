@@ -9,16 +9,22 @@ import {
   date_time,
   inscritos,
 } from "../../../utils/config";
+import SinoIcone from "../../../public/sino.png";
 import { VideoContain } from "./styles";
 import { VideoPlayerContext } from "../../context/VideoPlayer";
 import { useContext, useState } from "react";
 export default function Video() {
   const [isVisible, setIsVisible] = useState(false);
-
+  const [isSubscribe, setIsSubscribe] = useState(false);
   const handlerIsVisible = () => {
     if (isVisible) {
       setIsVisible(false);
     } else setIsVisible(true);
+  };
+  const handlerisSubscribe = () => {
+    if (isSubscribe) {
+      setIsSubscribe(false);
+    } else setIsSubscribe(true);
   };
   const { videoPlayer } = useContext(VideoPlayerContext);
   return (
@@ -30,6 +36,7 @@ export default function Video() {
               className="Iframe__Video"
               width="100%"
               frameBorder="0"
+              controls="0"
               src={videoPlayer.url}
               title="YouTube video player"
               allowFullScreen
@@ -70,7 +77,28 @@ export default function Video() {
                     </p>
                   </div>
                 </section>
-                <a className="Video__Botao">Inscreva-se</a>
+                {isSubscribe ? (
+                  <a
+                    onClick={() => handlerisSubscribe()}
+                    className="Video__Botao"
+                  >
+                    Inscrever-se
+                  </a>
+                ) : (
+                    <a
+                      onClick={() => handlerisSubscribe()}
+                      className="Video__Botao inscrito"
+                    >
+                      <Image
+                        className="Icone"
+                        alt="icone_sino"
+                        src={SinoIcone}
+                        width={24}
+                        height={24}
+                      />
+                      Inscrito
+                    </a>
+                )}
               </div>
             </div>
           </section>
@@ -118,7 +146,28 @@ export default function Video() {
                     <p className="Canal__Inscrito">{inscritos}</p>
                   </div>
                 </section>
-                <a className="Video__Botao">Inscreva-se</a>
+                {isSubscribe ? (
+                  <a
+                    onClick={() => handlerisSubscribe()}
+                    className="Video__Botao"
+                  >
+                    Inscrever-se
+                  </a>
+                ) : (
+                    <a
+                      onClick={() => handlerisSubscribe()}
+                      className="Video__Botao inscrito"
+                    >
+                      <Image
+                        className="Icone"
+                        alt="icone_sino"
+                        src={SinoIcone}
+                        width={24}
+                        height={24}
+                      />
+                      Inscrito
+                    </a>
+                )}
               </div>
             </div>
           </section>

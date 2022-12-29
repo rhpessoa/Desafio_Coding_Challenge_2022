@@ -2,7 +2,7 @@ import { HeaderContain } from "./styles";
 import Image from "next/image";
 import Search from "./Search";
 import YoutubeLogo from "../../../public/Logo.png"
-export default function Header() {
+export default function Header({searchVideo,setSearchVideo}) {
   return (
     <HeaderContain>
       <Image
@@ -11,7 +11,7 @@ export default function Header() {
         alt="Youtube"
         src={YoutubeLogo}
       />
-      <Search />
+      <Search searchVideo={searchVideo} setSearchVideo={setSearchVideo}/>
     </HeaderContain>
   );
 }

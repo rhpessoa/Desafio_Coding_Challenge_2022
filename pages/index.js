@@ -2,6 +2,7 @@ import Header from "../src/components/Header";
 import Video from "../src/components/Video";
 import Sugerido from "../src/components/Sugerido";
 import styled from "styled-components";
+import { useState } from "react";
 const ContainerHome = styled.div`
   height: 100vh;
   background-color: #0f0f0f;
@@ -37,11 +38,14 @@ const ContainerHome = styled.div`
   }
 `;
 export default function Home() {
+  const [searchVideo, setSearchVideo] = useState("");
   return (
     <ContainerHome>
-      <Header />
+      <Header 
+      searchVideo={searchVideo}
+      setSearchVideo={setSearchVideo} />
       <Video />
-      <Sugerido />
+      <Sugerido searchVideo={searchVideo}/>
     </ContainerHome>
   );
 }

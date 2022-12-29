@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const VideoContain = styled.div`
-  background-color: #0f0f0f;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   .Iframe__Video {
     width: 100%;
     height: 40vh;
+  }
+  .Video_show {
+    display: none;
   }
   .Info__Video {
     padding: 0.5em;
@@ -54,19 +54,33 @@ export const VideoContain = styled.div`
       height: 25px;
     }
     .Video__Botao {
-      padding: 0.5em;
+      padding: 0.3em ;
       background-color: white;
       color: black;
       border-radius: 15px;
-      font-size: 13px;
+      font-size: 10px;
       cursor: pointer;
       transition: 0.5ms;
     }
+    .inscrito {
+        background-color:#323232;
+        color:white;
+        display:flex;
+        align-items:center;
+        font-size:0px;
+        .Icone{
+          display:block;
+          margin: 5px 10px;
+        }
+      }
   }
   @media screen and (min-width: 768px) {
     .Video__Box {
       padding: 0 1.5em;
       margin-top: 4.5em;
+    }
+    .Video_show {
+      display: flex;
     }
     .Info__Video {
       padding: 1.5em;
@@ -87,7 +101,7 @@ export const VideoContain = styled.div`
         color: white;
         font-weight: bold;
       }
-      .Video_show{
+      .Video_show {
         margin-top: 0.5em;
         font-size: 14px;
         color: white;
@@ -140,6 +154,17 @@ export const VideoContain = styled.div`
         font-size: 13px;
         cursor: pointer;
         transition: 0.5ms;
+        font-weight:700;
+      }
+      .inscrito {
+        background-color:#323232;
+        color:white;
+        display:flex;
+        align-items:center;
+        font-size:13px;
+        .Icone{
+          margin: 0
+        }
       }
     }
   }

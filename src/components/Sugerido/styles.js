@@ -1,14 +1,11 @@
 import styled from "styled-components";
 export const SugeridoContain = styled.div`
-  background-color: #0f0f0f;
   overflow: auto;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   .Image {
     width: 100%;
     height: 25vh;
   }
-  .Button{
+  .Button {
     cursor: pointer;
   }
   .Info__Image {
